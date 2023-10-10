@@ -1,35 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from "./screens/HomeScreen";
+import AboutScreen from "./screens/AboutScreen";
+import TodoScreen from './screens/TodoScreen';
+import CompletedTasksScreen from './screens/CompletedTasksScreen';
 
 const Stack = createNativeStackNavigator();
-
-const HomeScreen = ({ navigation }) => {
-  return (
-      <View style={styles.container}>
-          <Text style={styles.header}>Home screen</Text>
-          <Button
-              title="Перейти на экран About"
-              onPress={() => navigation.navigate('About')}
-              color='green'
-          />
-      </View>
-  );
-}
-
-const AboutScreen = ({ navigation }) => {
-  return (
-      <View style={styles.container}>
-          <Text style={styles.header}>Экран About</Text>
-          <Button
-              title="Вернуться на Главный экран"
-              onPress={() => navigation.navigate('Home')}
-              color='red'
-          />
-      </View>
-  );
-}
 
 function App() {
   return (
@@ -37,6 +15,8 @@ function App() {
         <Stack.Navigator initialRouteName="Home">
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="About" component={AboutScreen} />
+            <Stack.Screen name='ToDo' component={TodoScreen}/>
+            <Stack.Screen name='CompletedTasks' component={CompletedTasksScreen}/>
         </Stack.Navigator>
     </NavigationContainer>
 );
@@ -47,10 +27,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
   },
   header: {
       fontSize: 24,
+      marginBottom: 20,
   },
 });
 
