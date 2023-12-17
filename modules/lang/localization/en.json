@@ -1,0 +1,25 @@
+{
+  "main": {
+    "tabs": {
+      "home": "Home",
+      "about": "About",
+      "settings": "Settings"
+    },
+    "screens": {
+      "home": {
+        "title": "Home Screen",
+        "desc": "This is the Home Screen of our app"
+      },
+      "about": {
+        "title": "About Screen",
+        "desc": "This is the Screen About our app"
+      },
+      "settings": {
+        "title": "Settings",
+        "desc": "There are the Settings of our app",
+        "lang": "Change Language",
+        "theme": "Change Theme"
+      }
+    }
+  }
+}
